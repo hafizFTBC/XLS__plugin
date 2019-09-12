@@ -1,0 +1,21 @@
+{
+  "name": "excelGitVal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
+    "office-ui-fabric-js": "^1.5.0",
+    "office-ui-fabric-react": "^6.187.2",
+    "react": "^16.8.6",
+    "request": "^2.88.0"
+  }
+}

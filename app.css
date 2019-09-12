@@ -1,0 +1,139 @@
+﻿/* Common app styling */
+
+#content-header {
+    background: #4467BF;
+    color: #fff;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px; /* Fixed header height */
+    overflow: hidden; /* Disable scrollbars for header */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+#content-main {
+    background: #fff;
+    position: absolute;
+    top: 0px; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto; /* Enable scrollbars within main content section */
+}
+
+.login-box {
+    padding-left: 2em;
+    padding-right: 4em;
+
+}
+
+
+.headerText {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+.container {
+    top: 80px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+.val-button{
+    position: absolute;
+    width: 200px;
+    height: 36px;
+    background: #F3F3F3;
+    border-radius: 2px;
+    margin-left: 5em;
+}
+.padding {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    margin-left: 24px;
+}
+
+.successMsg{
+    position: absolute;
+    width: 26px;
+    height: 19px;
+    left:4em;
+    font-style: normal;
+    font-weight: normal;
+    font-size: small;
+    line-height: 16px;
+    color: #529374;
+}
+.failMsg{
+    position: absolute;
+    width: 26px;
+    height: 19px;
+    left:0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: small;
+    line-height: 16px;   
+    color: #C81919;
+}
+
+#notification{
+    width: auto;
+}
+
+#icon-container{
+    text-align: -webkit-center;
+}
+
+.textAligner{
+    vertical-align: -webkit-baseline-middle;
+}
+
+
+#notification-message {
+    position: relative!important;
+    background-color: white;
+    color: #529374;
+    position: absolute;
+    width: 100%;
+    min-height: 20px;
+    right: 0;
+    z-index: 100;
+    bottom: 0;
+    display: none; /* Hidden until invoked */
+}
+
+    #notification-message #notification-message-header {
+        font-size: small;
+        margin-bottom: 10px;
+        text-align: center
+    }
+
+    #notification-message #notification-message-close {
+        background-image: url("../Images/Close.png");
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+    }
+
+.version {
+    float: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-right: 9px;
+}
+
+
+   

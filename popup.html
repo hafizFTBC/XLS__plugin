@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <title>Map Fields</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
+    <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
+    <link rel="stylesheet" href="app.css" />
+
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+    <link rel="stylesheet"
+        href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css" />
+    <link rel="stylesheet"
+        href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css" />
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body style="display:flex;flex-direction:column;">
+    <div class="padding">
+        <p class="headerText">Add or remove fields mapping</p>
+    </div>
+    <div>
+        <div class="ms-CheckBox">
+            <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
+            <label role="checkbox" class="ms-CheckBox-field" tabindex="0" aria-checked="false" name="checkboxa">
+                <span class="ms-Label">Remove All mapping</span>
+            </label>
+        </div>
+        <div class="ms-CheckBox">
+            <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
+            <label role="checkbox" class="ms-CheckBox-field" tabindex="0" aria-checked="false" name="checkboxb">
+                <span class="ms-Label">Map All</span>
+            </label>
+        </div>
+    </div>
+    <div class="ms-Grid" dir="ltr">
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-sm12 ms-lg4" style="overflow-x:auto;">
+                <!-- <table id="mappingTable" class="headerText">
+                </table> -->
+                <div style="float:left;">
+                    <ul id="excel-list" class="ms-List" style="float:left; margin-top:2em;">
+                    </ul>
+                </div>
+
+                <div style="float: right;">
+                    <ul id="val-list" class="ms-List" style="float:right;margin-top:2em;">
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="padding headerText" style="float: left">
+            <button id="ok-button" class="ms-Button">OK</button>
+        </div>
+
+    </div>
+
+</body>
+<script src="/node_modules/lodash/lodash.min.js"></script>
+<script type="text/javascript">
+    var CheckBoxElements = document.querySelectorAll(".ms-CheckBox");
+    for (var i = 0; i < CheckBoxElements.length; i++) {
+        new fabric['CheckBox'](CheckBoxElements[i]);
+    }
+</script>
+
+</html>

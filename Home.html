@@ -1,0 +1,153 @@
+﻿<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+    See full license at the bottom of this file. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>External Data GitHub Sample</title>
+
+    <!-- <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script> -->
+    <script src="/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <link href="/office.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <link href="/app.css" rel="stylesheet" type="text/css" />
+    <script src="/app.js" type="text/javascript"></script>
+
+    <!-- <link href="/home.css" rel="stylesheet" type="text/css" /> -->
+
+
+    <!-- <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css"> -->
+    <link rel="stylesheet"
+        href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css" />
+    <link rel="stylesheet"
+        href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css" />
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+    <!-- <script src="node_modules/office-ui-fabric-js/dist/js/fabric.min.js"></script>
+    <script rel="stylesheet" src="node_modules/office-ui-fabric-js/dist/css/fabric.components.min.css"></script>
+    <script rel="stylesheet" src="node_modules/office-ui-fabric-js/dist/css/fabric.min.css"></script> -->
+
+
+</head>
+
+<body class="ms-font-m">
+    <div class="padding">
+    </div>
+    <div id="content-main">
+        <div id="content-header">
+            <span class="textAligner">VAL excel plugin allows you to download your data from VAL and make direct updates
+                into VAL.</span>
+        </div>
+        <div id="notification-container">
+
+        </div>
+        <!-- LOGIN -->
+        <div id="loginContainer" class="container">
+            <div class="login-box">
+                <div class="padding">
+                    <div class="ms-TextField ms-TextField--underlined">
+                        <label class="ms-Label">Username: </label>
+                        <input class="ms-TextField-field" type="text" value="demoAdmin@val.com" placeholder=""
+                            id="userName">
+                    </div>
+                </div>
+                <div class="padding">
+                    <div class="ms-TextField ms-TextField--underlined">
+                        <label class="ms-Label">Password: </label>
+                        <input class="ms-TextField-field" type="password" value="123123" placeholder="" id="userPass">
+                    </div>
+                </div>
+
+                <div class="padding">
+                    <button class="val-button" id="login-button">Login</button>
+                </div>
+            </div>
+        </div>
+        <!-- END LOGIN -->
+        <!-- SELECTION -->
+        <div id="selectionContainer" class='container'>
+            <div class="padding">
+                <div id="repoTypeDropdown" class="ms-Dropdown" tabindex="0">
+                    <label class="ms-Label">Select a Repository Type </label>
+                    <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+                    <select class="ms-Dropdown-select" id="repotype_selection">
+                    </select>
+                </div>
+                <div id="projectDropdown" class="ms-Dropdown" tabindex="0">
+                    <label class="ms-Label">Select a Project </label>
+                    <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+                    <select class="ms-Dropdown-select" id="project_selection">
+                        <option value="0">Select a Project </option>
+                    </select>
+                </div>
+                <div id="phaseDropdown" class="ms-Dropdown is-disabled" tabindex="0">
+                    <label class="ms-Label">Select a Phase </label>
+                    <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+                    <select class="ms-Dropdown-select" id="phase_selection">
+                        <option value="0">Select a Phase </option>
+                    </select>
+                </div>
+                <div id="repoDropdown" class="ms-Dropdown is-disabled" tabindex="0">
+                    <label class="ms-Label">Select a Repository </label>
+                    <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--ChevronDown"></i>
+                    <select class="ms-Dropdown-select" id="repo_selection">
+                        <option value="0">Select a Repository </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- END SELECTION -->
+        <!-- ACTION -->
+        <div id="actionContainer" class="container">
+
+            <div class="padding">
+                <button class="val-button" id="get-repo-info">Download data from VAL </button>
+            </div>
+            <div class="padding">
+                <button class="val-button" id="update-info">Upload data into VAL </button>
+            </div>
+            <div class="padding">
+                <button class="val-button" id="open-dialog">Add or update field mapping</button>
+            </div>
+
+
+            <div style="margin-top: 27em; margin-right:2em">
+                <button class="ms-Button" id="backButton">
+                    <span class="ms-Button-label">Back</span>
+                </button>
+            </div>
+        </div>
+        <!-- END ACTION -->
+        <div class="padding version">
+            <span class="headerText">version 0.1a</span>
+        </div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+</body>
+<script type="text/javascript" src="home.js"></script>
+<script src="/node_modules/lodash/lodash.min.js"></script>
+
+
+
+<script type="text/javascript">
+    var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
+    for (var i = 0; i < DropdownHTMLElements.length; i++) {
+        new fabric['Dropdown'](DropdownHTMLElements[i]);
+    }
+
+</script>
+
+</html>
