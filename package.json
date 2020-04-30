@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.15",
     "office-ui-fabric-js": "^1.5.0",
     "office-ui-fabric-react": "^6.187.2",
